@@ -14,7 +14,7 @@
     <div class="headercards"> 
           <div class="p1up">
                     <div class="card1"><img src="Images2/icon1.png" ></div>
-                    <div class="card2"><p>patient Information</p> </div>
+                    <div class="card2"><p>staff Information</p> </div>
             </div>
 
                   <div class="p1down">
@@ -68,24 +68,25 @@
             
                        <div class="containerInsid">
 
-                                    <div class="h4"><h4>   pationt information sign in :</h4></div>
+                                    <div class="h4"><h4>   staff Information :</h4></div>
 
                         <div class="firscontent1">
+                                    <div class="inputwrapper">
+                                        <label for="id" class="newline">staff ID</label> <br/>
+                                        <input type="text" name="IdNumber" id="number" placeholder="IdNumber"style="width:180px ; height:30px ">   
+                                    </div>
 
                                     <div class="inputwrapper">
                                         <label for="name" class="newline" >First Name</label><br/>
-                                        <input type="text" name="name" id="name" placeholder="First Name" style="width:180px ; height:30px ">
+                                        <input type="text" name="name" id="name" placeholder="First Name"style="width:180px ; height:30px ">
                                     </div>
 
                                     <div class="inputwrapper">
                                         <label for="name" class="newline" >Last Name</label><br/>
-                                        <input type="text" name="name" id="name" placeholder="Last Name" style="width:180px ; height:30px ">
+                                        <input type="text" name="name" id="name" placeholder="Last Name"style="width:180px ; height:30px ">
                                     </div>
 
-                                    <div class="inputwrapper">
-                                        <label for="date" class="newline">date of birth</label> <br/>
-                                        <input type="date" name="date" id="date" placeholder="date of birth" style="width:180px ; height:30px ">   
-                                    </div>
+                                    
                          </div>
 
 
@@ -94,13 +95,13 @@
 
                                     <div class="inputwrapper">
                                         <label for="password" class="newline">password</label> <br/>
-                                        <input type="password" name="password" id="password" placeholder="password" style="width:180px ; height:30px ">   
+                                        <input type="password" name="password" id="password" placeholder="password"style="width:180px ; height:30px ">   
                                      </div>
 
 
                                     <div class="inputwrapper">
                                         <label for="confirmPassword" class="contact-pref">date of birth</label><br/> 
-                                        <input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="confirmPassword" style="width:180px ; height:30px ">   
+                                        <input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="confirmPassword"style="width:180px ; height:30px ">   
                                     </div>
 
 
@@ -108,10 +109,10 @@
                                             <label for="gender" class="contact-pref">gender</label> <br/>
                                             <form>
                                                 <label for="male">Male</label>
-                                                <input type="radio" id="male" name="gender" value="male" style="width:15px ; height:15px ">
+                                                <input type="radio" id="male" name="gender" value="male">
                                             
                                                 <label for="female">Female</label>
-                                                <input type="radio" id="female" name="gender" value="female"style="width:15px ; height:15px ">
+                                                <input type="radio" id="female" name="gender" value="female">
                                             </form>
                                         
                                         </div>
@@ -123,22 +124,22 @@
                                         
                                             <div class="inputwrapper">
                                                     <label for="flat" class="contact-pref">numberflat</label><br/>
-                                                    <input type=" number" name="numberflat" id="numberflat" placeholder="numberflat" style="width:150px ; height:30px ">
+                                                    <input type=" number" name="numberflat" id="numberflat" placeholder="numberflat"style="width:150px ; height:30px ">
                                             </div>
 
                                             <div class="inputwrapper">
                                                 <label for="road" class="contact-pref">road</label><br/>
-                                                <input type=" number" name="numberroad" id="numberroad" placeholder="numberroad" style="width:150px ; height:30px ">
+                                                <input type=" number" name="numberroad" id="numberroad" placeholder="numberroad"style="width:150px ; height:30px ">
                                              </div>
                                         <br/>
                                             <div class="inputwrapper">
                                                 <label for="BLD" class="contact-pref">BLD</label><br/>
-                                                <input type=" number" name="numberBLD" id="numberBLD" placeholder="numberBLD" style="width:150px ; height:30px ">
+                                                <input type=" number" name="numberBLD" id="numberBLD" placeholder="numberBLD"style="width:150px ; height:30px ">
                                              </div>
 
                                             <div class="inputwrapper">
                                                 <label for="governorate" class="contact-pref">governorate</label><br/>
-                                                <input type=" governorate" name="governorate" id="governorate" placeholder="governorate" style="width:150px ; height:30px ">
+                                                <input type=" governorate" name="governorate" id="governorate" placeholder="governorate"style="width:150px ; height:30px ">
                                              </div>
 
 
@@ -148,10 +149,10 @@
                                 <div class="conction">
                                 
                                             <label for="phone">Enter your phone number:</label><br/>
-                                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-
-
-                                            <button>Sign Up</button>
+                                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" style="width:180px ; height:30px ">
+                                            <br><label for="E-mail" class="contact-pref">Enter your E-mail</label><br>
+                                            <input type=" email" name="email" id="E-mail" placeholder="E-mail"style="width:180px ; height:30px ">
+                                            <button><i class="fa-solid fa-check"></i> Sign Up</button>
                                             <button><i class="fa-solid fa-xmark"></i> Cancel</button>
 
                                 </div>

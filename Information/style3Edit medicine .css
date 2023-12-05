@@ -226,7 +226,6 @@ margin :30px;
     padding-right: 10px;
     margin: 10px 10px 20px 20px;
 }
-
 input{
 
     border-radius: 5px;
@@ -239,11 +238,12 @@ h4{
    margin: 5px;
    
 }
+
 .conction button{
     background-color: #512da8;
     color: #fff;
     font-size: 12px;
-    padding: 10px 45px;
+    padding: 10px 30px;
     border: 1px solid transparent;
     border-radius: 8px;
     font-weight: 600;
@@ -252,7 +252,7 @@ h4{
     margin-top: 10px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    margin-left: 90px;
+    margin-left: 40px;
 }
 .conction button:hover  {
   
@@ -262,7 +262,6 @@ h4{
 label{
     color: #512da8;
     font-size: 17px;
-    
 }
 
 
@@ -307,6 +306,14 @@ label{
     background-color: #7799D8;
     transition-duration: 1s;
 }
+
+
+i.addproducer:hover{
+background-color: white;
+}
+i.addproducer{  
+      border: solid;
+    }
 
 
 
