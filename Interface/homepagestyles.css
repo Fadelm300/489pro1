@@ -4,7 +4,9 @@
 	box-sizing: border-box;
 	font-family: sans-serif;
     background-size: cover;
+    
 }
+
 header{
     height: 60px;
     width: 100%;
@@ -19,7 +21,7 @@ header{
 	cursor: pointer;
 	font-size: 30px;
 	font-weight: bold;
-	color: #00a7ff; /* blue */
+	color:#512da8; /* blue */
 }
 #logo:hover{
     color: #eef9ff; /* white */
@@ -29,7 +31,7 @@ header{
 	margin-left: 5px;
 }
 #logo:hover #logo-s{
-	color: #00a7ff; /* blue */
+	color: #512da8; /* blue */
 }
 .sign{
 	float: right;
@@ -37,7 +39,7 @@ header{
 	margin-right: 40px;
 }
 .sign a{
-	color: #fff;
+	color:#512da8;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -47,20 +49,10 @@ header{
 	padding: 6px 15px;
 }
 .sign a:hover{
-	color: #00a7ff; /* blue */
-	border-color: #00a7ff; /* blue */
+	color:#7799D8;; /* blue */
+	border-color:#7799D8;; /* blue */
 }
 
-footer{
-    height: 11.4%;
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    padding-top: 20px;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-
-}
 
 .nav {
     background-color:rgba(0, 0, 0, 0); 
@@ -78,7 +70,72 @@ footer{
 
 
 /* /1 */
+/* footer css*/
+footer{
+    background: #5c6bc0;
+    height: auto;
+    display: flex;
+    width: 100%;
+    font-family: monospace;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 50px;
+    text-align: center;
+  }
 
+  .footer-content h3{
+
+    font-size: 15px;
+    text-transform: capitalize;
+  
+  
+  }
+  .footer-contact p {
+    max-width: 500px;
+    margin: 15px auto;
+    line-height: 25px;
+    font-size: 323px;
+  }
+  
+  .footerHelp{
+  
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px 50px ;
+    padding: 0px 20px ;
+  }
+  .footerHelp li {
+    margin: 0 10px;
+  }
+  .footerHelp a {
+  
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .footerHelp a i {
+  
+    font-size: 1.1rem;
+    transition: color .4s ease ;
+  }
+  
+  .footerHelp a:hover  {
+  
+    color: #7799D8;
+  }
+  .footer-bottom{
+  
+    font-size: 14px;
+    word-spacing: 2px;
+    text-decoration: capitalize;
+  
+  }
 /* 2 */
 .slider{
 	position: relative;
@@ -104,7 +161,7 @@ footer{
 	user-select: none;
 }
 .prev:hover, .next:hover{
-	color: #00a7ff; /* blue */
+	color: #512da8; /* blue */
 }
 .next{
 	right: 0;
@@ -129,7 +186,7 @@ footer{
 
 /* javascript */
 .active, .dot:hover{
-	border-color: #00a7ff; /* blue */
+	border-color: #512da8;; /* blue */
 }
 /* /javascript */
 
@@ -179,7 +236,7 @@ footer{
 }
 
 .txt h1{
-	color: #00a7ff; /* blue */
+	color: #512da8; /* blue */
 	font-size: 50px;
 	margin-bottom: 20px;
 }
