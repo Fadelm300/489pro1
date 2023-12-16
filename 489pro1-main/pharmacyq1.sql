@@ -196,7 +196,20 @@ CREATE TABLE `supplier` (
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
+-- Table structure for table `supplier`
+--
+--
+CREATE TABLE `sales` (
+    `id` INT PRIMARY KEY NOT NULL,
+    `date` DATE NOT NULL,
+    `invoice_number` VARCHAR(11) NOT NULL,
+    `medicine_name` VARCHAR(30) NOT NULL,
+    `price` DECIMAL(10, 2) NOT NULL,
+    `quantity` INT(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 -- Dumping data for table `supplier`
 --
 
