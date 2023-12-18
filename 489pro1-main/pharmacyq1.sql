@@ -202,14 +202,7 @@ CREATE TABLE `supplier` (
 -- Table structure for table `supplier`
 --
 --
-CREATE TABLE `sales` (
-    `id` INT PRIMARY KEY NOT NULL,
-    `date` DATE NOT NULL,
-    `invoice_number` VARCHAR(11) NOT NULL,
-    `medicine_name` VARCHAR(30) NOT NULL,
-    `price` DECIMAL(10, 2) NOT NULL,
-    `quantity` INT(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 -- Dumping data for table `supplier`
 --
 
@@ -230,6 +223,55 @@ CREATE TABLE `supplies` (
   `accepted` tinyint(1) NOT NULL,
   `supplier ID` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoices`
+--
+
+CREATE TABLE `invoices` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `invoice_number` varchar(11) NOT NULL,
+  `patient_name` varchar(30) NOT NULL,
+  `quantity` int(50) NOT NULL,
+  `price` decimal(50,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `invoices`
+--
+
+INSERT INTO `invoices` (`id`, `date`, `invoice_number`, `patient_name`, `quantity`, `price`) VALUES
+(4, '2023-12-17', 'INV345', 'Ali', 3, '40'),
+(5, '2023-12-17', 'INV356', 'Ahmed', 2, '30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sales`
+--
+
+CREATE TABLE `sales` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `invoice_number` varchar(11) NOT NULL,
+  `medicine_name` varchar(30) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `quantity` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`id`, `date`, `invoice_number`, `medicine_name`, `price`, `quantity`) VALUES
+(15, '2023-12-16', 'INV123', 'ABC', '20.00', 1),
+(22, '2023-12-14', 'ABC123', 'mjj', '20.00', 3),
+(23, '2023-12-05', 'A', 'mjj', '10.00', 1),
+(24, '2023-12-17', 'ABC1', 'aa', '10.00', 2),
+(25, '2023-12-20', 'ABC1', 'AAA', '20.00', 5);
 
 --
 -- Indexes for dumped tables
@@ -296,6 +338,18 @@ ALTER TABLE `supplies`
   ADD KEY `supplier ID` (`supplier ID`);
 
 --
+-- Indexes for table `invoices`
+--
+ALTER TABLE `invoices`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sales`
+--
+ALTER TABLE `sales`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -316,6 +370,19 @@ ALTER TABLE `report`
 --
 ALTER TABLE `supplies`
   MODIFY `report number` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `invoices`
+--
+ALTER TABLE `invoices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `sales`
+--
+ALTER TABLE `sales`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+COMMIT;
 
 --
 -- Constraints for dumped tables
