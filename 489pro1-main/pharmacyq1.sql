@@ -273,6 +273,31 @@ INSERT INTO `sales` (`id`, `date`, `invoice_number`, `medicine_name`, `price`, `
 (24, '2023-12-17', 'ABC1', 'aa', '10.00', 2),
 (25, '2023-12-20', 'ABC1', 'AAA', '20.00', 5);
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stock`
+--
+
+CREATE TABLE `stock` (
+  `id` int(11) NOT NULL,
+  `medicine_name` varchar(30) NOT NULL,
+  `category` varchar(30) NOT NULL,
+  `purchase_cost` decimal(10,2) NOT NULL,
+  `quantity` int(50) NOT NULL,
+  `supplier` varchar(30) NOT NULL,
+  `expire_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `stock`
+--
+
+INSERT INTO `stock` (`id`, `medicine_name`, `category`, `purchase_cost`, `quantity`, `supplier`, `expire_date`) VALUES
+(8, 'mjj', 'Category1', '100.00', 2, 'Omran', '2023-12-21'),
+(9, 'AAA', 'Category2', '50.00', 2, 'Ali', '2023-12-22'),
+(10, 'BBB', 'Category3', '70.00', 3, 'Mohammed', '2023-12-28');
 --
 -- Indexes for dumped tables
 --
@@ -350,6 +375,12 @@ ALTER TABLE `sales`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `stock`
+--
+ALTER TABLE `stock`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -382,6 +413,13 @@ ALTER TABLE `invoices`
 --
 ALTER TABLE `sales`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+COMMIT;
+
+--
+-- AUTO_INCREMENT for table `stock`
+--
+ALTER TABLE `stock`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 --
