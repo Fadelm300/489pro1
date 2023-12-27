@@ -129,20 +129,20 @@ $result=mysqli_query($con,$query);
                         
                        
                         <li>
-                            <a href="#">
+                            <a href="SalesSummary.php">
                                 <span class="icon"><i class="fas fa-chart-line"></i></span>
                                 <span class="item">Sales summary</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="StockReport.php">
                                 <span class="icon"><i class="fas fa-chart-line"></i></span>
                                 <span class="item">Stock report</span>
                             </a>
                         </li>
                         
                         <li>
-                            <a href="#">
+                            <a href="ListOfInvoices.php">
                                 <span class="icon"><i class="fas fa-chart-line"></i></span>
                                 <span class="item">List of invoices</span>
                             </a>

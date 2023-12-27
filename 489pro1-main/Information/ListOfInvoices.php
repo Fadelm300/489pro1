@@ -10,8 +10,8 @@ $total = 0;
     <link rel="stylesheet" href="style3Edit medicine .css">
     <link rel="stylesheet" href="ListOfInvoicesStyle.css">
 
-    <!--Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Bootstrap 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <title>List of Invoices</title>
     <script src="https://kit.fontawesome.com/ba22c05506.js" crossorigin="anonymous"></script>
@@ -33,128 +33,128 @@ $total = 0;
 <br>
 
 
-  <!--start of the sidebar-->
+   <!--start of the sidebar-->
                   
-<div class="wrapper">
-    <div class="section">
-        <div class="top_navbar">
-            <div class="hamburger">
-                <a href="#">
-                    <i class="fas fa-bars"></i>
-                </a>
+ <div class="wrapper">
+                <div class="section">
+                    <div class="top_navbar">
+                        <div class="hamburger">
+                            <a href="#">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </div>
+                    </div>
+                     
+                </div>
+                <div class="sidebar">
+                    <div class="profile">
+                        <img src="Images2/icon1.png" alt="profile_picture">
+                        <h3>parmacy</h3>
+                        <p>BH</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="Interface489.html" class="active">
+                                <span class="icon"><i class="fas fa-home"></i></span>
+                                <span class="item">Home</span>
+                            </a>
+                        </li>
+                      
+                        <li>
+                            <a href="addadmin.php">
+                                <span class="icon"><i class="fas fa-user-friends"></i></span>
+                                <span class="item">ADD admin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="addPatient.php">
+                                <span class="icon"><i class="fas fa-user-friends"></i></span>
+                                <span class="item">ADD Patient</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="addstaff.php">
+                                <span class="icon"><i class="fas fa-user-friends"></i></span>
+                                <span class="item">ADD Staff</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="addSupplier.php">
+                                <span class="icon"><i class="fas fa-user-friends"></i></span>
+                                <span class="item">ADD Supplier</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="addmedicine.php">
+                                <span class="icon"><i class="fas fa-user-friends"></i></span>
+                                <span class="item">ADD Medicine</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="viewAdmin.php">
+                                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                <span class="item">view Admin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="viewmedicine.php">
+                                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                <span class="item">view Medecine</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="viewStaff.php">
+                                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                <span class="item">view  pharmacist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="viewsupplier.php">
+                                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                                <span class="item">view Supplier</span>
+                            </a>
+                        </li>
+                        
+                       
+                        <li>
+                            <a href="SalesSummary.php">
+                                <span class="icon"><i class="fas fa-chart-line"></i></span>
+                                <span class="item">Sales summary</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="StockReport.php">
+                                <span class="icon"><i class="fas fa-chart-line"></i></span>
+                                <span class="item">Stock report</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="ListOfInvoices.php">
+                                <span class="icon"><i class="fas fa-chart-line"></i></span>
+                                <span class="item">List of invoices</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><i class="fas fa-cog"></i></span>
+                                <span class="item">Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="exit.html">
+                                <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket "></i></span>
+                                <span class="item">exit</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
             </div>
-        </div>
-         
-    </div>
-    <div class="sidebar">
-        <div class="profile">
-            <img src="Images2/icon1.png" alt="profile_picture">
-            <h3>parmacy</h3>
-            <p>BH</p>
-        </div>
-        <ul>
-            <li>
-                <a href="Interface489.html" class="active">
-                    <span class="icon"><i class="fas fa-home"></i></span>
-                    <span class="item">Home</span>
-                </a>
-            </li>
-          
-            <li>
-                <a href="addadmin.php">
-                    <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">ADD admin</span>
-                </a>
-            </li>
-            <li>
-                <a href="addPatient.php">
-                    <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">ADD Patient</span>
-                </a>
-            </li>
-            <li>
-                <a href="addstaff.php">
-                    <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">ADD Staff</span>
-                </a>
-            </li>
-            <li>
-                <a href="addSupplier.php">
-                    <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">ADD Supplier</span>
-                </a>
-            </li>
-            <li>
-                <a href="addmedicine.php">
-                    <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">ADD Medicine</span>
-                </a>
-            </li>
-            
-            <li>
-                <a href="viewAdmin.php">
-                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                    <span class="item">view Admin</span>
-                </a>
-            </li>
-            <li>
-                <a href="viewmedicine.php">
-                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                    <span class="item">view Medecine</span>
-                </a>
-            </li>
-            <li>
-                <a href="viewStaff.php">
-                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                    <span class="item">view  pharmacist</span>
-                </a>
-            </li>
-            <li>
-                <a href="viewsupplier.php">
-                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                    <span class="item">view Supplier</span>
-                </a>
-            </li>
-            
-           
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <span class="item">Sales summary</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <span class="item">Stock report</span>
-                </a>
-            </li>
-            
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <span class="item">List of invoices</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-cog"></i></span>
-                    <span class="item">Settings</span>
-                </a>
-            </li>
-            <li>
-                <a href="exit.html">
-                    <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket "></i></span>
-                    <span class="item">exit</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    
-</div>
 
 
-<!--end of the sidebar-->
+ <!--end of the sidebar-->
   <br>
     <h1>List of Invoices</h1>
     <div class="container">
