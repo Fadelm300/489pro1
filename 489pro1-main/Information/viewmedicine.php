@@ -25,6 +25,28 @@ $result=mysqli_query($con,$query);
     <script src="https://kit.fontawesome.com/ba22c05506.js"  crossorigin="anonymous"></script>
     <title>view Medecine</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        button{
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    margin-left: 90px;
+}
+button:hover  {
+  
+    color: greenyellow;
+  }
+
+    </style>
     
 </head>
 <body>
@@ -183,11 +205,9 @@ $result=mysqli_query($con,$query);
             
 
             <div class="body2" >
-            <form enctype="multipart/form-data" method="post">
-      
-            
-                       
-
+           <a href="SearchMed.php">
+            <button type="submit" name="createA"><i class="fa-solid fa-magnifying-glass fa-2xl"></i><br></button>
+</a>
                        <?php
                        /*
 
@@ -238,7 +258,10 @@ while ($row = $r->fetch()) {
    echo " </table>";
     
 }*/
+
+  
 ?>
+ 
 <table border=1>
     <tr >
         <th>Medicine ID</th>
@@ -280,7 +303,7 @@ while ($row = $r->fetch()) {
                         <td><a href="#">Edit</a></td>
 
                         <td>
-              <a href="delete3.php?MDEEL=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
+                        <a href="delete3.php?MDEEL=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
               fs-5 me-3"></i></a>
                         </td>
 
@@ -383,6 +406,7 @@ while ($row = $r->fetch()) {
       </script>
 </body>
 </html>
+
 
 
 
