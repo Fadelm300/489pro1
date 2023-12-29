@@ -191,16 +191,16 @@ require ("connection.php");
 
                                     <div class="h4"><h4>   add medicine</h4></div>
 
-                        <div class="firscontent1">
+                            <div class="firscontent1">
 
                                     <div class="inputwrapper">
-                                        <label for="medicineId medicine_ID" class="newline" >medicine ID :</label><br/>
-                                        <input   autocomplete="off" type="number" name="medicineId medicine_ID" id="medicineId medicine_ID" placeholder="medicineId" style="width:300px ; height:40px " required>
+                                        <label for="" class="newline" >medicine ID :</label><br/>
+                                        <input   autocomplete="off" type="number" name=" medicine_ID" id="medicine_ID" placeholder="medicineId" style="width:300px ; height:40px " required>
                                     </div>
 
                                     <div class="inputwrapper">
-                                        <label for="medicineIdName medicine_name " class="newline" >medicine Name :</label><br/>
-                                        <input   autocomplete="off" type="text" name="medicineIdName medicine_name" id="medicineIdName medicine_name" placeholder="medicineId Name" style="width:300px ; height:40px " required min="1">
+                                        <label for=" medicine_name " class="newline" >medicine Name :</label><br/>
+                                        <input   autocomplete="off" type="text" name="medicine_name" id=" medicine_name" placeholder="medicineId Name" style="width:300px ; height:40px " required >
                                     </div>
 
                                    
