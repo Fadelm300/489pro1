@@ -21,7 +21,7 @@ include "connection.php";
 
 
 // delet admin 
-$Employee_ID= $_GET['DEEL'];
+$Employee_ID= $_GET['ADEEL'];
 $query = "DELETE FROM admin WHERE Employee_ID='".$Employee_ID."'";
 $result=mysqli_query($con,$query);
 if($result){
@@ -33,7 +33,7 @@ else {
 
 
 //delet medecen 
-$medicine_ID= $_GET['DEEL'];
+$medicine_ID= $_GET['MDEEL'];
 $query = "DELETE FROM medicine WHERE medicine_ID='".$medicine_ID."'";
 $result=mysqli_query($con,$query);
 if($result){
@@ -45,7 +45,7 @@ else {
 
 
 //delet  Patient  
-$username= $_GET['DEEL'];
+$username= $_GET['PDEEL'];
 $query = "DELETE FROM patient WHERE username ='".$username."'";
 $result=mysqli_query($con,$query);
 if($result){
@@ -71,7 +71,7 @@ else {
 
 
 //delet supplier
-$Supplier_id= $_GET['DEEL'];
+$Supplier_id= $_GET['SSDEEL'];
 $query = "DELETE FROM supplier WHERE Supplier_id ='".$Supplier_id."'";
 $result=mysqli_query($con,$query);
 if($result){
