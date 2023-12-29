@@ -202,7 +202,6 @@ h4{
 <div class="conteneras1">
     <div class="centered-div">
     
-                                    <div class="h4" ><h4>   HOME page</h4></div>
 
                                     <form action="SearchMed.php" method="POST">
         <h1>Search for a Medicine:</h1>
