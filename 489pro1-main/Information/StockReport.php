@@ -48,10 +48,9 @@ $total = 0;
                 <div class="sidebar">
                     <div class="profile">
                         <img src="Images2/icon1.png" alt="profile_picture">
-                        <h3>pharmacy</h3>
+                        <h3>parmacy</h3>
                         <p>BH</p>
                     </div>
-                    <div class="scroll" >
                     <ul>
                         <li>
                             <a href="Interface489.html" class="active">
@@ -98,12 +97,6 @@ $total = 0;
                             </a>
                         </li>
                         <li>
-                            <a href="viewPatient.php">
-                                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                                <span class="item">view Patient</span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="viewmedicine.php">
                                 <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
                                 <span class="item">view Medecine</span>
@@ -124,20 +117,20 @@ $total = 0;
                         
                        
                         <li>
-                            <a href="#">
+                            <a href="SalesSummary.php">
                                 <span class="icon"><i class="fas fa-chart-line"></i></span>
                                 <span class="item">Sales summary</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="StockReport.php">
                                 <span class="icon"><i class="fas fa-chart-line"></i></span>
                                 <span class="item">Stock report</span>
                             </a>
                         </li>
                         
                         <li>
-                            <a href="#">
+                            <a href="ListOfInvoices.php">
                                 <span class="icon"><i class="fas fa-chart-line"></i></span>
                                 <span class="item">List of invoices</span>
                             </a>
@@ -155,7 +148,6 @@ $total = 0;
                             </a>
                         </li>
                     </ul>
-                    </div>
                 </div>
                 
             </div>
@@ -305,9 +297,9 @@ $total = 0;
     
     </footer>
 
-<!--Bootstrap -->
+<!--Bootstrap 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+-->
 
 <script>
            var hamburger = document.querySelector(".hamburger");

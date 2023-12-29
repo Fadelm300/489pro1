@@ -284,7 +284,7 @@
                                                 style="width:300px ; height:40px "  required >   
                                              </div>
 
-                                            <button type="submit" name="createA" style=" font-size:25px;"><i class="fa-solid fa-circle-plus   "></i>  Sign Up</button>
+                                            <button type="submit" name="createA" style=" font-size:25px;"><i class="fa-solid fa-circle-plus   "></i>  ADD</button>
 
                                             <button style=" font-size:25px;"><i class="fa-solid fa-xmark"></i> Cancel </button>
 

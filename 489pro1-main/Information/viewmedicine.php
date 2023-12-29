@@ -303,7 +303,7 @@ while ($row = $r->fetch()) {
                         <td><a href="#">Edit</a></td>
 
                         <td>
-                        <a href="delete3.php?MDEEL=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
+                        <a href="deletemedecen.php?MDEEL=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
               fs-5 me-3"></i></a>
                         </td>
 

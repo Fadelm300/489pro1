@@ -267,7 +267,7 @@ while ($row = $r->fetch()) {
                         <td><a href="#">Edit</a></td>
 
                         <td>
-              <a href="delete3.php?SSDEEL=<?php echo $row['Supplier_id']?>" class="link-dark"><i class="fa-solid fa-trash
+              <a href="deletesupplier.php?SSDEEL=<?php echo $row['Supplier_id']?>" class="link-dark"><i class="fa-solid fa-trash
               fs-5 me-3"></i></a>
                         </td>                       
 
