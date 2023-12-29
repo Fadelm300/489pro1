@@ -285,7 +285,7 @@ while ($row = $r->fetch()) {
                         <td><a href="#">Edit</a></td>
 
                         <td>
-              <a href="deletstfaf.php?DEEL=<?php echo $row['Employee_ID']?>" class="link-dark"><i class="fa-solid fa-trash
+              <a href="deletstfaf.php?SDEEL=<?php echo $row['Employee_ID']?>" class="link-dark"><i class="fa-solid fa-trash
               fs-5 me-3"></i></a>
                         </td>  
                      
