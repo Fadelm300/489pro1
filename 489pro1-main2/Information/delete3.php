@@ -1,0 +1,94 @@
+<?php /*
+include "connection.php";
+$Employee_ID = $_GET['ID'];
+$sql = "DELETE FROM admin WHERE Employee_ID = $Employee_ID";
+$result = mysqli_query($conn, $sql);
+if($result){
+    header("Location: viewAdmin.php?msg=Record deleted successfully");
+}
+else {
+    echo "Failed: " . mysqli_error($conn);
+   }
+ */   ?>  
+
+
+
+<?PHP
+
+include "connection.php";
+
+
+
+
+// delet admin 
+$Employee_ID= $_GET['ADEEL'];
+$query = "DELETE FROM admin WHERE Employee_ID='".$Employee_ID."'";
+$result=mysqli_query($con,$query);
+if($result){
+    header("Location: viewAdmin.php?msg=Record deleted successfully");
+}
+else {
+    echo "Failed: " . mysqli_error($conn);
+   }
+
+
+//delet medecen 
+$medicine_ID= $_GET['MDEEL'];
+$query = "DELETE FROM medicine WHERE medicine_ID='".$medicine_ID."'";
+$result=mysqli_query($con,$query);
+if($result){
+    header("Location: viewmedicine.php?msg=Record deleted successfully");
+}
+else {
+    echo "Failed: " . mysqli_error($conn);
+   }
+
+
+//delet  Patient  
+$username= $_GET['PDEEL'];
+$query = "DELETE FROM patient WHERE username ='".$username."'";
+$result=mysqli_query($con,$query);
+if($result){
+    header("Location: viewPatient.php?msg=Record deleted successfully");
+}
+else {
+    echo "Failed: " . mysqli_error($conn);
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//delet supplier
+$Supplier_id= $_GET['SSDEEL'];
+$query = "DELETE FROM supplier WHERE Supplier_id ='".$Supplier_id."'";
+$result=mysqli_query($con,$query);
+if($result){
+    header("Location: viewsupplier.php?msg=Record deleted successfully");
+}
+else {
+    echo "Failed: " . mysqli_error($conn);
+   }
+
+
+
+
+
+
+
+
+
+
+
+?>
