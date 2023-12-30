@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2023 at 02:06 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 30, 2023 at 06:21 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -54,6 +54,52 @@ INSERT INTO `admin` (`Employee_ID`, `administration_level`, `speciality`, `passw
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `invoice_id` int(11) NOT NULL,
+  `invoice_number` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`invoice_id`, `invoice_number`) VALUES
+(0, 'INV111'),
+(2020, 'INV123'),
+(2020067, 'INV456'),
+(2020313, 'INV444'),
+(2020333, 'INV333'),
+(202006747, 'INV111');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoices`
+--
+
+CREATE TABLE `invoices` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `invoice_number` varchar(11) NOT NULL,
+  `patient_name` varchar(30) NOT NULL,
+  `quantity` int(50) NOT NULL,
+  `price` decimal(50,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `invoices`
+--
+
+INSERT INTO `invoices` (`id`, `date`, `invoice_number`, `patient_name`, `quantity`, `price`) VALUES
+(4, '2023-12-17', 'INV345', 'Ali', 3, '40'),
+(5, '2023-12-17', 'INV356', 'Ahmed', 2, '30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `medicine`
 --
 
@@ -75,10 +121,11 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`medicine_ID`, `medicine_name`, `price`, `quantity`, `dateOfCreate`, `dateOfEnd`, `theProducer`, `key`, `Supplierphonenumber`, `description`) VALUES
+(2020, 'ABC', 50, 5, '2023-12-30', '2024-01-07', 'sass', 973, 3332321, 'hhhh'),
 (2020067, 'asd', 12, 12, '2023-12-08', '2023-12-24', 'asd', 333, 131231, 'adada'),
-(2020312, 'asdad', 13, 13, '2023-12-13', '2023-12-25', 'asdac', 222, 1231311, 'hdhhdhf'),
-(2020313, '', 22, 30, '2023-12-09', '2023-12-26', 'fadel', 123, 33302807, 'fadel is the best '),
-(2020314, '', 12, 12, '2023-12-01', '2023-12-26', 'asdafafda', 333, 12312312, 'adafafaad');
+(2020313, 'MMM', 60, 1, '2023-12-30', '2024-01-07', 'ddd', 973, 65236523, 'sss'),
+(2020333, 'ssaa1', 45, 3, '2023-12-30', '2024-01-05', 'sss', 973, 66451234, 'gggg'),
+(202006747, 'ABC', 50, 5, '2023-12-30', '2024-01-06', 'ssss', 973, 66563652, 'ffff');
 
 -- --------------------------------------------------------
 
@@ -182,74 +229,6 @@ CREATE TABLE `report` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
---
-
-CREATE TABLE `supplier` (
-  `Supplier_id` int(8) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `FName` varchar(15) NOT NULL,
-  `LName` varchar(11) NOT NULL,
-  `Email` varchar(30) NOT NULL,
-  `key` int(3) NOT NULL,
-  `PhoneNO` int(8) DEFAULT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `supplier`
---
---
-
--- Dumping data for table `supplier`
---
-
-INSERT INTO `supplier` (`Supplier_id`, `password`, `FName`, `LName`, `Email`, `key`, `PhoneNO`, `description`) VALUES
-(2020, 'qqqqq', 'aaaa', '0', 'fadel.m200@gmail.com', 333, 333333, 'zzzzzzzzzzzzzzz'),
-(123123, 'asdfdasd1', '11111111qaa', 'aaaa', 'fadel.m200@gmail.com', 123, 1213123, 'afadf'),
-(2020067, 'fadel.m', 'fadel', '0', 'fadel.m200@gmail.com', 333, 33302807, 'adffdsaf'),
-(202006747, 'dasdas', 'dasdas', '0', 'fadel.m200@gmail.com', 333, 123123, 'xzccsd');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `supplies`
---
-
-CREATE TABLE `supplies` (
-  `report number` int(11) NOT NULL,
-  `accepted` tinyint(1) NOT NULL,
-  `supplier ID` int(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `invoices`
---
-
-CREATE TABLE `invoices` (
-  `id` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `invoice_number` varchar(11) NOT NULL,
-  `patient_name` varchar(30) NOT NULL,
-  `quantity` int(50) NOT NULL,
-  `price` decimal(50,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `invoices`
---
-
-INSERT INTO `invoices` (`id`, `date`, `invoice_number`, `patient_name`, `quantity`, `price`) VALUES
-(4, '2023-12-17', 'INV345', 'Ali', 3, '40'),
-(5, '2023-12-17', 'INV356', 'Ahmed', 2, '30');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `sales`
 --
 
@@ -271,8 +250,8 @@ INSERT INTO `sales` (`id`, `date`, `invoice_number`, `medicine_name`, `price`, `
 (22, '2023-12-14', 'ABC123', 'mjj', '20.00', 3),
 (23, '2023-12-05', 'A', 'mjj', '10.00', 1),
 (24, '2023-12-17', 'ABC1', 'aa', '10.00', 2),
-(25, '2023-12-20', 'ABC1', 'AAA', '20.00', 5);
-
+(25, '2023-12-20', 'ABC1', 'AAA', '20.00', 5),
+(26, '2023-12-27', 'A', 'pan', '20.00', 2);
 
 -- --------------------------------------------------------
 
@@ -297,7 +276,48 @@ CREATE TABLE `stock` (
 INSERT INTO `stock` (`id`, `medicine_name`, `category`, `purchase_cost`, `quantity`, `supplier`, `expire_date`) VALUES
 (8, 'mjj', 'Category1', '100.00', 2, 'Omran', '2023-12-21'),
 (9, 'AAA', 'Category2', '50.00', 2, 'Ali', '2023-12-22'),
-(10, 'BBB', 'Category3', '70.00', 3, 'Mohammed', '2023-12-28');
+(10, 'BBB', 'Category3', '70.00', 3, 'Mohammed', '2023-12-28'),
+(11, 'ab', 'Category4', '50.00', 3, 'Ali', '2023-12-27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplier`
+--
+
+CREATE TABLE `supplier` (
+  `Supplier_id` int(8) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `FName` varchar(15) NOT NULL,
+  `LName` varchar(11) NOT NULL,
+  `Email` varchar(30) NOT NULL,
+  `key` int(3) NOT NULL,
+  `PhoneNO` int(8) DEFAULT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`Supplier_id`, `password`, `FName`, `LName`, `Email`, `key`, `PhoneNO`, `description`) VALUES
+(2020, 'qqqqq', 'aaaa', '0', 'fadel.m200@gmail.com', 333, 333333, 'zzzzzzzzzzzzzzz'),
+(123123, 'asdfdasd1', '11111111qaa', 'aaaa', 'fadel.m200@gmail.com', 123, 1213123, 'afadf'),
+(2020067, 'fadel.m', 'fadel', '0', 'fadel.m200@gmail.com', 333, 33302807, 'adffdsaf'),
+(202006747, 'dasdas', 'dasdas', '0', 'fadel.m200@gmail.com', 333, 123123, 'xzccsd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplies`
+--
+
+CREATE TABLE `supplies` (
+  `report number` int(11) NOT NULL,
+  `accepted` tinyint(1) NOT NULL,
+  `supplier ID` int(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -307,6 +327,18 @@ INSERT INTO `stock` (`id`, `medicine_name`, `category`, `purchase_cost`, `quanti
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`Employee_ID`);
+
+--
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`invoice_id`);
+
+--
+-- Indexes for table `invoices`
+--
+ALTER TABLE `invoices`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `medicine`
@@ -350,6 +382,18 @@ ALTER TABLE `report`
   ADD KEY `employee ID` (`employee ID`);
 
 --
+-- Indexes for table `sales`
+--
+ALTER TABLE `sales`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `stock`
+--
+ALTER TABLE `stock`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
@@ -363,44 +407,8 @@ ALTER TABLE `supplies`
   ADD KEY `supplier ID` (`supplier ID`);
 
 --
--- Indexes for table `invoices`
---
-ALTER TABLE `invoices`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sales`
---
-ALTER TABLE `sales`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `stock`
---
-ALTER TABLE `stock`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `medicine`
---
-ALTER TABLE `medicine`
-  MODIFY `medicine_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2020315;
-
---
--- AUTO_INCREMENT for table `report`
---
-ALTER TABLE `report`
-  MODIFY `report number` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `supplies`
---
-ALTER TABLE `supplies`
-  MODIFY `report number` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `invoices`
@@ -409,18 +417,34 @@ ALTER TABLE `invoices`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `medicine`
+--
+ALTER TABLE `medicine`
+  MODIFY `medicine_ID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202006748;
+
+--
+-- AUTO_INCREMENT for table `report`
+--
+ALTER TABLE `report`
+  MODIFY `report number` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `supplies`
+--
+ALTER TABLE `supplies`
+  MODIFY `report number` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
