@@ -136,8 +136,8 @@ if(isset($_POST['btn'])){
                         <td><h6><?php echo $row['description'] ?></h6></td>
 
 
-                        <td><a href="#">Edit</a></td>
-
+                        <td><a href="Editmedecen.php?Mupdate=<?php echo $row['medicine_ID']?>" class="link-dark">
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ff0000;"></i></td>
                         
 
 

@@ -14,6 +14,7 @@ $result=mysqli_query($con,$query);
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -300,11 +301,12 @@ while ($row = $r->fetch()) {
                         <td><?php echo $row['description'] ?></td>
 
 
-                        <td><a href="#">Edit</a></td>
+                        <td><a href="Editmedecen.php?Mupdate=<?php echo $row['medicine_ID']?>" class="link-dark">
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ff0000;"></i></td>
 
                         <td>
-                        <a href="deletemedecen.php?MDEEL=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
-              fs-5 me-3"></i></a>
+                        <a href="deletemedecen.php?MDEEL=<?php echo $row['medicine_ID']?>" class="link-dark">
+                        <i class="fa-solid fa-trash fs-5 me-3"></i></a>
                         </td>
 
 

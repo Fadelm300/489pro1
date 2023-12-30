@@ -1,6 +1,22 @@
 <?php
 require ("connection.php");
+$medicine_ID=$_GET['Mupdate'];
+$query="select * from medicine where medicine_ID='".$medicine_ID."' ";
+$result=mysqli_query($con,$query);
 
+while($row = mysqli_fetch_assoc($result))
+{
+    $medicine_ID=$row['medicine_ID'];
+   $medicine_name=$row['medicine_name'];
+   $price=$row['price'];
+    $quantity=$row['quantity'];
+    $dateOfCreate=$row['dateOfCreate'];
+    $dateOfEnd= $row['dateOfEnd'] ;
+    $theProducer=$row['theProducer'];
+    $key=$row['key'];
+    $Supplierphonenumber= $row['Supplierphonenumber'];  
+    $description= $row['description'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +26,7 @@ require ("connection.php");
     <link rel="stylesheet" href="style3Edit medicine .css">
 
     <script src="https://kit.fontawesome.com/ba22c05506.js" crossorigin="anonymous"></script>
-    <title>add medicine  </title>
+    <title>Edit medicine  </title>
 </head>
 <body>
 <div class="container">
@@ -18,7 +34,7 @@ require ("connection.php");
     <div class="headercards"> 
           <div class="p1up">
                     <div class="card1"><img src="Images2/icon1.png" ></div>
-                    <div class="card2"><p>add medicine  </p> </div>
+                    <div class="card2"><p>Edit medicine  </p> </div>
             </div>
 
 
@@ -166,10 +182,8 @@ require ("connection.php");
 
 
             <div class="body2" >
-                
-            <form enctype="multipart/form-data" method="post">
-    <?php
-
+            <?php
+/*
     extract($_POST);
     if (isset($createA)) { //if the user hit the create the auction button
         try {
@@ -185,100 +199,75 @@ require ("connection.php");
         } catch (PDOException $x) {
             die($x->getmessage());
         }
-    }
-    ?>        
-                       <div class="containerInsid">
+    }*/
+    ?> 
+<form enctype="multipart/form-data" method="post" action="updatemed.php">
+    <div class="containerInsid">
+        <div class="h4">
+            <h4>Update Medicine</h4>
+        </div>
 
-                                    <div class="h4"><h4>   add medicine</h4></div>
+        <div class="firscontent1">
+            <div class="inputwrapper">
+                <label for="medicine_ID" class="newline">Medicine ID:</label><br/>
+                <input value="<?php echo $medicine_ID ?>" autocomplete="off" type="number" name="medicine_ID" id="medicine_ID" placeholder="Medicine ID" style="width:300px; height:40px" required>
+            </div>
 
-                            <div class="firscontent1">
+            <div class="inputwrapper">
+                <label for="medicine_name" class="newline">Medicine Name:</label><br/>
+                <input value="<?php echo $medicine_name ?>" autocomplete="off" type="text" name="medicine_name" id="medicine_name" placeholder="Medicine Name" style="width:300px; height:40px" required>
+            </div>
+        </div>
 
-                                    <div class="inputwrapper">
-                                        <label for="" class="newline" >medicine ID :</label><br/>
-                                        <input   autocomplete="off" type="number" name=" medicine_ID" id="medicine_ID" placeholder="medicineId" style="width:300px ; height:40px " required>
-                                    </div>
+        <div class="firscontent2">
+            <div class="inputwrapper">
+                <label for="price" class="newline">Price:</label><br/>
+                <input value="<?php echo $price ?>" autocomplete="off" type="number" name="price" id="price" placeholder="Price" style="width:300px; height:40px" required>
+            </div>
 
-                                    <div class="inputwrapper">
-                                        <label for=" medicine_name " class="newline" >medicine Name :</label><br/>
-                                        <input   autocomplete="off" type="text" name="medicine_name" id=" medicine_name" placeholder="medicineId Name" style="width:300px ; height:40px " required >
-                                    </div>
+            <div class="inputwrapper">
+                <label for="quantity" class="newline">Quantity:</label><br/>
+                <input value="<?php echo $quantity ?>" autocomplete="off" type="number" name="quantity" id="quantity" placeholder="Quantity" style="width:300px; height:40px" required min="1">
+            </div>
+        </div>
 
-                                   
-                         </div>
+        <div class="firscontent2">
+            <div class="inputwrapper">
+                <label for="dateOfCreate" class="newline">Date of Create:</label><br/>
+                <input value="<?php echo $dateOfCreate ?>" autocomplete="off" type="date" name="dateOfCreate" id="dateOfCreate" style="width:300px; height:40px" required>
+            </div>
 
+            <div class="inputwrapper">
+                <label for="dateOfEnd" class="newline">Date of End:</label><br/>
+                <input value="<?php echo $dateOfEnd ?>" autocomplete="off" type="date" name="dateOfEnd" id="dateOfEnd" style="width:300px; height:40px" required>
+            </div>
+        </div>
 
+        <div class="firscontent2">
+            <div class="inputwrapper">
+                <label for="theProducer" class="newline">The Producer:</label><br/>
+                <input value="<?php echo $theProducer ?>" autocomplete="off" type="text" name="theProducer" id="theProducer" placeholder="The Producer" style="width:300px; height:40px" required>
+            </div>
 
-                                <div class="firscontent2">
+            <div class="inputwrapper">
+                <label for="Supplierphonenumber" class="newline">Supplier Phone Number:</label><br/>
+                <input value="<?php echo $key ?>" autocomplete="off" type="number" name="key" required min="1" id="pet-select" style="width:60px; height:40px" placeholder="xxx">
+                <input value="<?php echo $Supplierphonenumber ?>" autocomplete="off" type="text" name="Supplierphonenumber" id="Supplierphonenumber" placeholder="xxx xxx xxx" style="width:240px; height:40px" required>
+            </div>
+        </div>
 
-                                    <div class="inputwrapper">
-                                        <label for="price" class="newline">price :</label> <br/>
-                                        <input  autocomplete="off" type="price" name="price" id="price" placeholder="price" style="width:300px ; height:40px " required >   
-                                     </div>
+        <div class="h4">
+            <h4>Description:</h4>
+        </div>
+        <div class="conction">
+            <label for="description">Enter your description:</label><br/>
+            <input value="<?php echo $description ?>" autocomplete="off" type="text" id="description" name="description" placeholder="Enter your description" style="width:500px; height:120px" required>
 
-                                     <div class="inputwrapper">
-                                        <label for="quantity" class="newline">quantity :</label> <br/>
-                                        <input autocomplete="off"  type="number" name="quantity" id="quantity" placeholder="quantity" style="width:300px ; height:40px " required min="1">   
-                                     </div>
-            
-
-                                    </div>
-
-
-                                    
-                                    <div class="firscontent2">
-
-                                        <div class="inputwrapper">
-                                            <label for="dateOfCreate" class="newline">date Of Create :</label> <br/>
-                                            <input autocomplete="off" type="date" name="dateOfCreate" id="dateOfCreate" placeholder="dateOfCreate " style="width:300px ; height:40px " required>   
-                                         </div>
-    
-                                         <div class="inputwrapper">
-                                            <label for="dateOfEnd" class="newline">date Of End :</label> <br/>
-                                            <input autocomplete="off" type="date" name="dateOfEnd" id="dateOfEnd" placeholder="dateOfEnd" style="width:300px ; height:40px " required>   
-                                         </div>
-
-
-                                        </div>
-
-                                        <div class="firscontent2">
-
-                                            <div class="inputwrapper">
-                                                <label for="theProducer" class="newline">the Producer :</label> <br/>
-                                                <input autocomplete="off" type="text" name="theProducer" id="theProducer" placeholder="theProducer " 
-                                                style="width:300px ; height:40px "  required>   
-                                             </div>
-
-                                             
-                                             <div class="inputwrapper">
-                                                <label for="Supplierphonenumber" class="newline">Supplier phone number </label> <br/>
-                                                
-                                                <input autocomplete="off" type="number" name="key" required min="1" id="pet-select"style="width:60px ; height:40px "placeholder="xxx">
-                                                <input autocomplete="off" type="number" name="Supplierphonenumber" id="Supplierphonenumber" placeholder="xxx xxx xxx"style="width:240px ; height:40px "required>   
-                                            </div>
-        
-                                            
-                                            </div>
-                                        
-    
-                                    
-                                    
-
-
-                                <div class="h4"><h4>description:</h4></div>
-                                <div class="conction">
-                                
-                                            <label for="description drp">Enter your description:</label><br/>
-                                            <input  autocomplete="off" type="text" id="description" name="description" placeholder="  Enter your description.."style="width:500px ; height:120px " required >
- 
-
-                                            <button type="submit" name="createA"><i class="fa-solid fa-circle-plus fa-3x  "></i><br>add</button>
-                                            
-
-
-                                </div>
-
-
-</div>
+            <button type="submit" name="updatebtn">
+                <i class="fa-solid fa-circle-plus fa-3x"></i><br>Update
+            </button>
+        </div>
+    </div>
 </form>
 
             </div>

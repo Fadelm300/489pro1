@@ -297,7 +297,8 @@ while ($row = $r->fetch()) {
                         <td>(<?php echo $row['numberflat_house']?> )(<?php echo $row['BLD']?> )(<?php echo $row['road']?> )(<?php echo $row['governorate']?> ) </td>
 
                         
-                        <td><a href="#">Edit</a></td>
+                        <td><a href="EditAdmin.php?Admin_update=<?php echo $row['Employee_ID']?>" class="link-dark">
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ff0000;"></i></td>
 
                         <td>
               <a href="deleteadmin.php?ADEEL=<?php echo $row['Employee_ID']?>" class="link-dark"><i class="fa-solid fa-trash
