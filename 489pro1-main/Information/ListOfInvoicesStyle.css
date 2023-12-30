@@ -295,6 +295,12 @@ footer{
     border-radius: 8px;
     font-size:15px;
  }
+ input.invoice_id{
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    font-size:15px;
+ }
  input.invoice_number{
     width: 200px;
     height: 30px;
