@@ -1,16 +1,26 @@
 <?php
-require("connection.php");
-
-$query="select * from pharmacist";
+require ("connection.php");
+$Employee_ID=$_GET['staff_update'];
+$query="select * from pharmacist where Employee_ID='".$Employee_ID."' ";
 $result=mysqli_query($con,$query);
+
+while($row = mysqli_fetch_assoc($result))
+{
+    $Employee_ID=$row['Employee_ID'];
+   $Name=$row['Name'];
+   $degree=$row['degree'];
+       $speciality=$row['speciality'];
+    $dateOfBirth= $row['dateOfBirth'] ;
+    $Email=$row['Email'];
+    $key=$row['key'];
+    $PhoneNO= $row['PhoneNO'];  
+    $numberflat_house= $row['numberflat_house'];
+    $BLD= $row['BLD'];
+    $road= $row['road'];
+    $governorate= $row['governorate'];
+
+}
 ?>
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,31 +30,8 @@ $result=mysqli_query($con,$query);
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="style3Edit medicine .css">
 
-    <script src="https://kit.fontawesome.com/ba22c05506.js"  crossorigin="anonymous"></script>
-    <title>view Pharmacist</title>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <style>
-        button{
-    background-color: #512da8;
-    color: #fff;
-    font-size: 12px;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    margin-left: 90px;
-}
-button:hover  {
-  
-    color: greenyellow;
-  }
-
-    </style>
+    <script src="https://kit.fontawesome.com/ba22c05506.js" crossorigin="anonymous"></script>
+    <title>Update Staff pharmacist Information</title>
 </head>
 <body>
 <div class="container">
@@ -52,11 +39,10 @@ button:hover  {
     <div class="headercards"> 
           <div class="p1up">
                     <div class="card1"><img src="Images2/icon1.png" ></div>
-                    <div class="card2"><p>view Pharmacist</p> </div>
+                    <div class="card2"><p>Update pharmacist Information</p> </div>
             </div>
+                
 
-                 
-   
  <!--start of the sidebar-->
                   
  <div class="wrapper">
@@ -73,10 +59,9 @@ button:hover  {
                 <div class="sidebar">
                     <div class="profile">
                         <img src="Images2/icon1.png" alt="profile_picture">
-                        <h3>pharmacy</h3>
+                        <h3>parmacy</h3>
                         <p>BH</p>
                     </div>
-                    <div class="scroll" >
                     <ul>
                         <li>
                             <a href="Interface489.html" class="active">
@@ -168,13 +153,18 @@ button:hover  {
                             </a>
                         </li>
                         <li>
+                            <a href="#">
+                                <span class="icon"><i class="fas fa-cog"></i></span>
+                                <span class="item">Settings</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="exit.html">
                                 <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket "></i></span>
                                 <span class="item">exit</span>
                             </a>
                         </li>
                     </ul>
-                    </div>
                 </div>
                 
             </div>
@@ -190,151 +180,113 @@ button:hover  {
 
 
 
+
+
     </div>
-    
             
 
             <div class="body2" >
-            <form enctype="multipart/form-data" method="post">
-      
+            <form enctype="multipart/form-data" method="post" action="updatStaff.php">
+  
             
-                       
+                       <div class="containerInsid">
 
-                       <?php /*
+                                    <div class="h4"><h4>   pharmacist information sign in :</h4></div>
 
-extract($_POST);
-try {
-    $db = new PDO('mysql:host=localhost;dbname=pharmacyq1;charset=UTF8', 'root', '');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    <div class="firscontent1">
+                                    
+                                    <div class="inputwrapper">
+                                        <label for="name" class="newline" >Employee_ID</label><br/>
+                                        <input  value="<?php echo $Employee_ID ?>" autocomplete="off" type="text" name="Employee_ID" id="Employee_ID" placeholder="Employee_ID" style="width:135px ; height:30px "required>
+                                    </div>
+                                    <div class="inputwrapper">
+                                        <label for="Name " class="newline" >Name:</label><br/>
+                                        <input   value="<?php echo $Name ?>" autocomplete="off" type="text" name="Name" id="Name" placeholder="Name" style="width:135px ; height:30px " required min="1">
+                                    </div>
 
-    // aaisha change sql statement
-    $sql = "SELECT * FROM  pharmacist";
-    $r = $db->query($sql);
-    $count= $r->rowCount();
-    echo "<center>";
-    echo "<br><br><h1>Total results are : ".$count."</h1>";
-    
-    $db = null;
-} catch (PDOException $x) {
-    die($x->getMessage());
-}
-?>
-<div class="containerInsidoutput">
+                                    <div class="inputwrapper">
+                                        <label for="LName " class="newline" >degree:</label><br/>
+                                        <input  value="<?php echo $degree ?>"  autocomplete="off" type="text" name="degree" id="degree" placeholder="degree" style="width:135px ; height:30px " required >
+                                    </div>
 
-<hr>
-
-
-<br><br>
-
-
-<?php
-
-while ($row = $r->fetch()) {
-    echo "<table border=1 '>";
-    echo "<tr>";
-    echo "<th> <h4> Pharmacist ID:</h4> <h5> $row[0] </h5></th>";
-    echo "<th> <h4> Pharmacist Name:</h4> <h5> $row[4] </h5></th>";
-    echo "<th> <h4>Pharmacist Degree:</h4> <h5> $row[1] </h5></th>";
-    echo "<th> <h4> Pharmacist speciality:</h4><h5> $row[2] </h5></th>";
-    echo "<th> <h4> dateOfBirth:</h4> <h5> $row[5] </h5> </th>";
-    echo "<th>  <h4>gender:</h4><h5>( $row[6]) </h5> </th>";
-    echo "<th>  <h4> 	Email :</h4><h6> $row[7] </h6>  </th>";
-    echo "<th>  <h4> 	PhoneNO :</h4><h6> ($row[8])$row[9]  </h6>  </th>";
-    echo "<th>  <h4> 	address</br> nu flat_house/road/BLD/governorate	:</h4><h6> $row[10]/$row[11]/$row[12]/$row[13] </h6>  </th>";
-
+                                    <div class="inputwrapper">
+                                        <label for="speciality " class="newline" >speciality :</label><br/>
+                                        <input   value="<?php echo $speciality ?>"  autocomplete="off" type="text" name="speciality" id="speciality" placeholder="speciality" style="width:135px ; height:30px " required >
+                                    </div>
    
-    echo " </tr>";
-   
-    echo " </table>";
 
-    
-}*/
-?>
-    <?php
-         if(isset($_GET['msg'])) {
-              $msg = $_GET['msg'];
-              
-              $msg;
-             
-         }
-         ?>
+                                  
+                         </div>
+
+
+                                <div class="firscontent1">
 
 
 
-<table border=1>
-    <tr >
-        <th>Employee ID</th>
-        <th>Employee Name</th>
-        <th>degree</th>
-        <th>speciality</th>
-        <th>gender</th>
-        <th>date Of Birth</th>
-        <th>Email:</th>
-        <th>PhoneNO:</th>
-        <th>address</th>
-       
-        
-
-       
+                                    <div class="inputwrapper">
+                                        <label for="dateOfBirth" class="contact-pref">date of birth</label><br/> 
+                                        <input value="<?php echo $dateOfBirth ?>"  autocomplete="off" type="date" name="dateOfBirth" id="dateOfBirth" placeholder="dateOfBirth" style="width:180px ; height:30px "required>   
+                                    </div>
 
 
-    </tr>
-                        <tr >
-                        <?php
+                                 
+                               
+                                    </div>
+                                    
+<h4>address</h4>
+                         <div class="Assrss">
+                                        
+                                            <div class="inputwrapper">
+                                                    <label for="numberflat_house" class="contact-pref">numberflat_house</label><br/>
+                                                    <input  value="<?php echo $numberflat_house ?>" autocomplete="off" type=" number" name="numberflat_house" id="numberflat_house" placeholder="numberflat_house" style="width:150px ; height:30px " required min="1">>
+                                            </div>
 
-                            while($row = mysqli_fetch_assoc($result))
-                        {?>
-                        <td><?php echo $row['Employee_ID'] ?></td>
+                                            <div class="inputwrapper">
+                                                <label for="road" class="contact-pref">road</label><br/>
+                                                <input value="<?php echo $road ?>"  autocomplete="off" type=" number" name="road" id="nroad" placeholder="numberroad" style="width:150px ; height:30px " required min="1">>
+                                             </div>
+                                        <br/>
+                                            <div class="inputwrapper">
+                                                <label for="BLD" class="contact-pref">BLD</label><br/>
+                                                <input value="<?php echo $BLD ?>" autocomplete="off" type=" number" name="BLD" id="BLD" placeholder="numberBLD" style="width:150px ; height:30px " required min="1">>
+                                             </div>
 
-                        <td><?php echo $row['Name'] ?></td>
-
-                        <td><?php echo $row['degree'] ?></td>
-
-                        <td><?php echo $row['speciality'] ?></td>
-                        
-                        <td><?php echo $row['gender'] ?></td>
-
-                        <td><?php echo $row['dateOfBirth'] ?></td>
-                        
-                        <td><?php echo $row['Email'] ?></td>
-
-                        <td>(<?php echo $row['key']?> )<?php echo $row['PhoneNO']  ?></td>
-                        
-                        <td>(<?php echo $row['numberflat_house']?> )(<?php echo $row['BLD']?> )(<?php echo $row['road']?> )(<?php echo $row['governorate']?> ) </td>
-
-                        
-                        <td><a href="EditStaff.php?staff_update=<?php echo $row['Employee_ID']?>" class="link-dark">
-                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ff0000;"></i></td>
-
-                        <td>
-              <a href="deletstfaf.php?SDEEL=<?php echo $row['Employee_ID']?>" class="link-dark"><i class="fa-solid fa-trash
-              fs-5 me-3"></i></a>
-                        </td>  
-                     
+                                            <div class="inputwrapper">
+                                                <label for="governorate" class="contact-pref">governorate</label><br/>
+                                                <input value="<?php echo $governorate ?>"  autocomplete="off" type=" tex" name="governorate" id="governorate" placeholder="governorate" style="width:150px ; height:30px " required min="1">>
+                                             </div>
 
 
+                         </div>
 
-                                </tr>
-                        <?php
-                            }
-                            ?>
+                                <div class="h4"><h4>conction:</h4></div>
+                                <div class="conction">
+                                
+                                            <label for="phone">Enter your phone number:</label><br/>
 
-                       
+                                                <input value="<?php echo $key ?>"  autocomplete="off" type="number" name="key"  id="pet-select"style="width:60px ; height:40px " placeholder="xxx"required min="1">
+                                                <input  value="<?php echo $PhoneNO ?>" autocomplete="off" type="number" name="PhoneNO" id="PhoneNO" placeholder="xxx xxx xxx"style="width:240px ; height:40px "required>
+
+                                                <div class="inputwrapper">
+                                                <label for="theProducer" class="newline"> Email :</label> <br/>
+                                                <input  value="<?php echo $Email ?>" autocomplete="off" type="Email" name="Email" id="Email" placeholder="Email " 
+                                                style="width:300px ; height:40px "  required >   
+                                             </div>
+
+                                            <button type="submit" name="updatebtnADMIN" style=" font-size:25px;"><i class="fa-solid fa-circle-plus   "></i>  Update</button>
+
+                                     
+                                      
 
 
-</table>
-<br>
-<br>
-<br>
 
-<button onclick="window.print();" id="print" class="generate-btn"><b>Generate Report</b></button>
+                           
                                 </div>
 
-
 </div>
+</form>
 
             </div>
-
 
 
 
@@ -401,24 +353,3 @@ while ($row = $r->fetch()) {
       </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
