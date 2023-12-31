@@ -1,5 +1,5 @@
 <?php
-include_once 'db_connection2.php';
+include_once 'connection.php';
 $total = 0;
 ?>
 <!DOCTYPE html>
@@ -168,7 +168,7 @@ $total = 0;
          }
          ?>
         
-        <form action="addTo_stock.php" method="post">
+        <!--<form action="addTo_stock.php" method="post">
             
             <div class="form-group">
             <input type="text" class="medicine_name" name="medicine_name" placeholder="Medicine Name" required>
@@ -192,7 +192,7 @@ $total = 0;
             <input type="submit" class="AddTo_stock" value="Add to Stock" name="submit">
             </div>
         </form>
-        </div>
+        </div>-->
         <br>
         <br>
 
@@ -207,40 +207,39 @@ $total = 0;
         <tr>
             <th>ID</th>
             <th>Medicine Name</th>
-            <th>Category</th>
-            <th>Purchase Cost</th>
+            <!--<th>Category</th>-->
+            <!--<th>Purchase Cost</th>-->
             <th>Quantity</th>
             <th>Supplier</th>
             <th>Expire Date</th>
             <th>Remove</th>
         
         </tr>
-      <?php
-      include "db_connection2.php";
-      $sql = "SELECT * FROM stock";
-      $result = mysqli_query($conn, $sql);
+        <?php
+      include "connection.php";
+      $sql = "SELECT medicine_ID, medicine_name, quantity, dateOfEnd, FName FROM medicine, supplier" ;
+      
+      $result = mysqli_query($con, $sql);
       while ($row = mysqli_fetch_assoc($result)) {
+        
         $medicine_name = $row['medicine_name'];
-        $category = $row['category'];
-        $purchase_cost = $row['purchase_cost'];
         $quantity = $row['quantity'];
-        $supplier = $row['supplier'];
-        $expire_date = $row['expire_date'];
+        $Supplier_name = $row['FName'];
+        $date = $row['dateOfEnd'];
         ?>
 
 
            <tr>
-            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['medicine_ID']; ?></td>
             <td><?php echo $row['medicine_name']; ?></td>
-            <td><?php echo $row['category']; ?></td>
-            <td><?php echo $row['purchase_cost']; ?></td>
-            <td><?php echo $row['quantity']; $pro = $row['quantity'] * $row['purchase_cost'];
-                             $total = $total + $pro; ?></td>
-            <td><?php echo $row['supplier']; ?></td>
-            <td><?php echo $row['expire_date']; ?></td>
+
+            
+            <td><?php echo $row['quantity']; ?></td>
+            <td><?php echo $row['FName']; ?></td>
+            <td><?php echo $row['dateOfEnd']; ?></td>
         
             <td>
-              <a href="delete2.php?id=<?php echo $row['id']?>" class="link-dark"><i class="fa-solid fa-trash
+              <a href="delete2.php?id=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
               fs-5 me-3"></i></a>
             </td>
             </tr>
@@ -256,7 +255,7 @@ $total = 0;
         </table>
         <?php ?>
        
-        <h3><b>Grand Total:</b> <span><b><?php echo $total; ?></b></span></h3>
+        <!--<h3><b>Grand Total:</b> <span><b><?php echo $total; ?></b></span></h3>-->
         
     </section>
     

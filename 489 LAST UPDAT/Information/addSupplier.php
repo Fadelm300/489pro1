@@ -40,7 +40,7 @@ require ("connection.php");
                 <div class="sidebar">
                     <div class="profile">
                         <img src="Images2/icon1.png" alt="profile_picture">
-                        <h3>parmacy</h3>
+                        <h3>pharmacy</h3>
                         <p>BH</p>
                     </div>
                     <ul>
@@ -183,12 +183,12 @@ require ("connection.php");
     ?>        
                        <div class="containerInsid">
 
-                                    <div class="h4"><h4>   add Supplie</h4></div>
+                                    <div class="h4"><h4>   add Supplier</h4></div>
 
                         <div class="firscontent1">
 
                                     <div class="inputwrapper">
-                                        <label for=" Supplier_id" class="newline" >Supplie ID :</label><br/>
+                                        <label for=" Supplier_id" class="newline" >supplier ID :</label><br/>
                                         <input   autocomplete="off" type="number" name="Supplier_id" id="Supplier_id" placeholder="Supplier_id" style="width:300px ; height:40px " required>
                                     </div>
 
@@ -209,12 +209,12 @@ require ("connection.php");
                                     
 
                                      <div class="inputwrapper">
-                                        <label for="FName " class="newline" >Supplie  first Name :</label><br/>
+                                        <label for="FName " class="newline" >Supplier  first Name :</label><br/>
                                         <input   autocomplete="off" type="text" name="FName" id="FName" placeholder="FName" style="width:300px ; height:40px " required min="1">
                                     </div>
 
                                     <div class="inputwrapper">
-                                        <label for="LName " class="newline" >Supplie Last Name :</label><br/>
+                                        <label for="LName " class="newline" >Supplier Last Name :</label><br/>
                                         <input   autocomplete="off" type="text" name="LName" id="LName" placeholder="LName" style="width:300px ; height:40px " required min="1">
                                     </div>
             

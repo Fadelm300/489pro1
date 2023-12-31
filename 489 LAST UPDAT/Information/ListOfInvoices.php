@@ -1,5 +1,5 @@
 <?php
-include_once 'db_connection1.php';
+include_once 'connection.php';
 $total = 0;
 ?>
 <!DOCTYPE html>
@@ -170,13 +170,16 @@ $total = 0;
          ?>
         
         <form action="save-invoice.php" method="post">
-            <div class="form-group">
+            <!--<div class="form-group">
             <input type="date" class="Date" name="Date" placeholder="Date" required>
+            </div>-->
+            <div class="form-group">
+            <input type="text" class="invoice_id" name="invoice_id" placeholder="Invoice ID" required>
             </div>
             <div class="form-group">
             <input type="text" class="invoice_number" name="invoice_number" placeholder="Invoice Number" required>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
             <input type="text" class="patient_name" name="patient_name" placeholder="Patient Name" required>
             </div>
             <div class="form-group">
@@ -184,7 +187,7 @@ $total = 0;
             </div>
             <div class="form-group">
             <input type="number" class="price" name="price" placeholder="Price" required>
-            </div>
+            </div>-->
             <div class="form-group">
             <input type="submit" class="Save-invoice" value="Save Invoice" name="submit">
             </div>
@@ -213,31 +216,32 @@ $total = 0;
         
         </tr>
       <?php
-      include "db_connection1.php";
-      $sql = "SELECT * FROM invoices";
-      $result = mysqli_query($conn, $sql);
+      include "connection.php";
+      $sql = "SELECT medicine_ID, dateOfCreate, price, quantity, FName, invoice_number FROM medicine, patient, invoice WHERE invoice.invoice_id = medicine.medicine_ID";
+      
+      $result = mysqli_query($con, $sql);
       while ($row = mysqli_fetch_assoc($result)) {
-        $date = $row['date'];
+        $date = $row['dateOfCreate'];
         $invoice_number = $row['invoice_number'];
-        $patient_name = $row['patient_name'];
+        $patient_name = $row['FName'];
         $quantity = $row['quantity'];
         $price = $row['price'];
         ?>
 
 
            <tr>
-            <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['date']; ?></td>
+            <td><?php echo $row['medicine_ID']; ?></td>
+            <td><?php echo $row['dateOfCreate']; ?></td>
             <td><?php echo $row['invoice_number']; ?></td>
-            <td><?php echo $row['patient_name']; ?></td>
+            <td><?php echo $row['FName']; ?></td>
             <td><?php echo $row['quantity']; ?></td>
-            <td><?php echo $row['price']; ?></td>
+            <td><?php echo $row['price'] ; echo ' $'?></td>
             <td><?php echo $row['quantity'] * $row['price']; 
-                             $pro = $row['quantity'] * $row['price'];
-                             $total = $total + $pro;?></td>
+                             $pro = $row['quantity'] * $row['price'] ;
+                             $total = $total + $pro; echo ' $'?></td>
             
             <td>
-              <a href="delete1.php?id=<?php echo $row['id']?>" class="link-dark"><i class="fa-solid fa-trash
+              <a href="delete1.php?id=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
               fs-5 me-3"></i></a>
             </td>
             </tr>
@@ -252,7 +256,7 @@ $total = 0;
      
         </table>
        
-        <h3><b>Total:</b> <span><b><?php echo $total; ?></b></span></h3>
+        <h3><b>Total:</b> <span><b><?php echo $total; echo ' $'?></b></span></h3>
         
     </section>
     

@@ -1,5 +1,5 @@
 <?php
-include_once 'db_connection.php';
+include_once 'connection.php';
 $total = 0;
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ $total = 0;
                 <div class="sidebar">
                     <div class="profile">
                         <img src="Images2/icon1.png" alt="profile_picture">
-                        <h3>parmacy</h3>
+                        <h3>pharmacy</h3>
                         <p>BH</p>
                     </div>
                     <ul>
@@ -165,7 +165,7 @@ $total = 0;
          }
          ?>
         
-        <form action="add_sale.php" method="post">
+        <!--<form action="add_sale.php" method="post">
             <div class="form-group">
             <input type="date" class="Date" name="Date" placeholder="Date" required>
             </div>
@@ -185,22 +185,34 @@ $total = 0;
             <input type="submit" class="Add-sale" value="Add Sale" name="submit">
             </div>
         </form>
-        </div>
+        </div>-->
         <br>
         <br>
 
+<!--<?php
+      include "connection.php";
+      $sql = "SELECT * FROM medicine";
+      $result = mysqli_query($con, $sql);
+      while ($row = mysqli_fetch_assoc($result)) {
+        $date = $row['dateOfCreate'];
+       ?> 
       <form class="form-inline" method="POST" action="">
 			<input type="date" class="form-control" placeholder="Start"  name="date1" value="<?php echo isset($_POST['date1']) ? $_POST['date1'] : '' ?>" />
 			<input type="date" class="form-control" placeholder="End"  name="date2" value="<?php echo isset($_POST['date2']) ? $_POST['date2'] : '' ?>"/>
-			<button class="btn btn-primary" name="search"><span class="glyphicon glyphicon-search"></span></button> <a href="index.php" type="button" class="btn btn-success"><span class = "glyphicon glyphicon-refresh"><span></a>
+			<button class="btn btn-primary" name="search"><span class="glyphicon glyphicon-search"></span></button> <a href="SalesSummary.php" type="button" class="btn btn-success"><span class = "glyphicon glyphicon-refresh"><span></a>
 	  </form>
+      <?php
+      }
+    
+  
+        ?>-->
       
  <section class="row print-container">
     <table id="table" width="100%">
         <tr>
             <th>ID</th>
             <th>Date</th>
-            <th>Invoice Number</th>
+            
             <th>Medicine Name</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -209,12 +221,12 @@ $total = 0;
         
         </tr>
       <?php
-      include "db_connection.php";
-      $sql = "SELECT * FROM sales";
-      $result = mysqli_query($conn, $sql);
+      include "connection.php";
+      $sql = "SELECT * FROM medicine";
+      $result = mysqli_query($con, $sql);
       while ($row = mysqli_fetch_assoc($result)) {
-        $date = $row['date'];
-        $invoice_number = $row['invoice_number'];
+        $date = $row['dateOfCreate'];
+        
         $medicine_name = $row['medicine_name'];
         $price = $row['price'];
         $quantity = $row['quantity'];
@@ -222,18 +234,18 @@ $total = 0;
 
 
            <tr>
-            <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['date']; ?></td>
-            <td><?php echo $row['invoice_number']; ?></td>
+            <td><?php echo $row['medicine_ID']; ?></td>
+            <td><?php echo $row['dateOfCreate']; ?></td>
+            
             <td><?php echo $row['medicine_name']; ?></td>
-            <td><?php echo $row['price']; ?></td>
+            <td><?php echo $row['price'];  echo ' $'?></td>
             <td><?php echo $row['quantity']; ?></td>
             <td><?php echo $row['price'] * $row['quantity']; 
                              $pro = $row['price'] * $row['quantity'];
-                             $total = $total + $pro;?></td>
+                             $total = $total + $pro; echo ' $'?></td>
             
             <td>
-              <a href="delete.php?id=<?php echo $row['id']?>" class="link-dark"><i class="fa-solid fa-trash
+              <a href="delete.php?id=<?php echo $row['medicine_ID']?>" class="link-dark"><i class="fa-solid fa-trash
               fs-5 me-3"></i></a>
             </td>
             </tr>
@@ -248,7 +260,7 @@ $total = 0;
      
         </table>
        
-        <h3><b>Total:</b> <span><b><?php echo $total; ?></b></span></h3>
+        <h2><b>Total:</b> <span><b><?php echo $total; echo ' $'?></b> </span></h2>
         
     </section>
     <button onclick="window.print();" id="print" class="generate-btn"><b>Generate Report</b></button>
