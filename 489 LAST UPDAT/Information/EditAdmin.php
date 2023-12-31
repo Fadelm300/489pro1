@@ -188,7 +188,7 @@ while($row = mysqli_fetch_assoc($result))
             
 
             <div class="body2" >
-            <form enctype="multipart/form-data" method="post">
+            <form enctype="multipart/form-data" method="post" action="updatAdmin.php">
     <?php
 /*
     extract($_POST);
