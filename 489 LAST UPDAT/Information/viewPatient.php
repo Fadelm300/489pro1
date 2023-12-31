@@ -293,7 +293,8 @@ while ($row = $r->fetch()) {
                         <td>(<?php echo $row['key']?> )<?php echo $row['PhoneNO']  ?></td>
 
 
-                        <td><a href="#">Edit</a></td>
+                        <td><a href="EditPationt.php?PPupdate=<?php echo $row['username']?>" class="link-dark">
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #ff0000;"></i></td>
 
                         <td>
               <a href="deletePatient.php?PDEEL=<?php echo $row['username']?>" class="link-dark"><i class="fa-solid fa-trash
